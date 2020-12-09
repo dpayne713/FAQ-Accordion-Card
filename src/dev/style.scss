@@ -1,0 +1,411 @@
+
+:root {
+
+    //Text
+    --Very-dark-desaturated-blue: hsl(238, 29%, 16%); 
+    --Soft-red: hsl(14, 88%, 65%); 
+
+    // Background gradient:
+
+    --Soft-violet: hsl(273, 75%, 66%);
+    --Soft-blue: hsl(240, 73%, 65%);    
+
+    // Text
+
+    --Very-dark-grayish-blue: hsl(237, 12%, 33%);
+    --Dark-grayish-blue: hsl(240, 6%, 50%);
+
+    // Dividers
+
+    --Light-grayish-blue: hsl(240, 5%, 91%); 
+
+    --white: #ffffff; 
+
+    --blackText : #1E1F36; 
+}
+
+
+*,
+*::before, 
+*::after {
+    box-sizing: inherit;
+    padding: 0; 
+    margin: 0; 
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    box-sizing: border-box; 
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
+.background {
+    background-image: linear-gradient(var(--Soft-violet), var(--Soft-blue));
+    height: 100vh; 
+    width: 100vw; 
+    overflow: auto; 
+
+}; 
+
+.card {
+    height:  50.9rem; 
+    max-width: 92rem;
+    border-radius: 2rem;
+    margin: 12.9rem auto 0 auto; 
+    background-color: var(--white);
+
+    display: flex; 
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: relative; 
+    
+
+                
+    @media screen and (max-width: 1000px) {
+        margin: 12.9rem 3.5rem 0 3.5rem; 
+    }
+
+    @media screen and (max-width: 880px), (max-height: 500px) {
+
+            height: 40rem; 
+    }
+
+    @media screen and (max-width: 750px) {
+        flex-direction: column;
+        justify-content: center;
+        height: 53.5rem; 
+        width: 32.7rem; 
+        margin: 12.9rem auto 0 auto; 
+
+    }
+
+
+
+    &-left {
+        width: 47.5rem; 
+        height: 100%; 
+        border-radius: 2rem 0 0 2rem;
+        display: flex; 
+        align-items: center;
+        position: relative;
+
+        @media screen and (max-width: 830px) {
+            width: 40rem; 
+        }
+
+        @media screen and (max-width: 750px) {
+            height: 8rem; 
+            width: 100%; 
+        }
+       
+
+        &__image {
+            width: 100%; 
+            height: 100%; 
+            overflow: hidden;
+            position: relative; 
+            padding: .1rem; 
+
+            @media screen and (max-width: 750px) {
+               overflow: visible;
+            }
+
+            &-MAIN {
+                width: 47.2rem; 
+                height: 35.9rem; 
+                position: absolute; 
+                left: -10rem; 
+                top: 50%; 
+                transform: translateY(-50%);
+                
+                background-image: url(images/illustration-woman-online-desktop.svg);
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+                z-index: 2;
+
+                animation-name: bringInFromLeft;
+                animation-timing-function: ease-in-out;
+                animation-duration: .8s;
+                animation-iteration-count: 1;
+
+                @media screen and (max-width: 830px) {
+                    transform: translateY(-50%) scale(.85);
+                }        
+
+                @media screen and (max-width: 750px) {
+                    background-image: url(images/illustration-woman-online-mobile.svg);
+                    height: 18rem; 
+                    width: 31.5rem; 
+                    top: -10.5rem; 
+                    left: 50%; 
+                    transform: translateX(-50%);
+
+                    animation-name: bringIn;
+                    animation-timing-function: ease-in-out;
+                    animation-duration: .6s;
+                    animation-iteration-count: 1;
+                }
+
+            }
+
+            &-BEHIND {
+                width: 96.4rem; 
+                height: 94.4rem; 
+                position: absolute; 
+                left: -11.2rem;  
+                top: 35%; 
+                transform: translateX(-50%) translateY(-50%);
+
+                background-image: url(images/bg-pattern-desktop.svg);
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+                z-index: 1;
+
+                animation-name: bringInFromLeft;
+                animation-timing-function: ease-in-out;
+                animation-duration: .8s;
+                animation-iteration-count: 1;
+
+                @media screen and (max-width: 830px) {
+                    transform: translateX(-46%) translateY(-50%) scale(.85);
+                }
+
+                @media screen and (max-width: 750px) {
+                    background-image: url(images/bg-pattern-mobile.svg);
+
+                    transform: translateX(-50%);
+                    animation-name: bringIn;
+                    animation-timing-function: ease-in-out;
+                    animation-duration: .6s;
+                    animation-iteration-count: 1;
+
+                    height: 14.5rem; 
+                    width: 26rem; 
+                    top: 0; 
+                    left: 50%; 
+
+                }
+                
+            }
+
+            &-BOX {
+                height: 10.6rem;
+                width: 19rem; 
+                z-index: 2;
+
+                position: absolute; 
+                left: 0; 
+
+                top: 50%; 
+                transform: translateX(-50%) translateY(-50%);
+                background-image: url(images/illustration-box-desktop.svg);
+                background-position: center;
+                background-size: contain;
+                background-repeat: no-repeat;
+
+
+                animation-name: bringIn;
+                animation-timing-function: ease-in-out;
+                animation-duration: .8s;
+                animation-iteration-count: 1;
+
+                @media screen and (max-width: 750px) {
+                   background-image: none; 
+                   display: none; 
+                }
+            }
+
+        }
+
+    }
+
+    &-right {
+        height: 100%; 
+        max-width: 53rem; 
+        padding: 6.5rem 9rem 6.5rem 0rem ; 
+        display: flex; 
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+
+        @media screen and (max-width: 900px) {
+            padding: 6.5rem 5rem 6.5rem 0rem; 
+        }
+
+        @media screen and (max-width: 830px) {
+            padding: 6.5rem 2rem 6.5rem 0rem; 
+        }
+        @media screen and (max-width: 790px) {
+            padding: 6.5rem 1rem 6.5rem 0rem; 
+        }
+
+        @media screen and (max-width: 750px) {
+            width: 27.9rem; 
+            align-items: center; 
+            padding: 2rem 1.5rem 2rem 1.5rem; 
+        }
+
+
+        &__headline {
+            width: 100%; 
+            height: 3.2rem; 
+
+            @media screen and (max-width: 750px) {
+                text-align: center;
+                padding-bottom: 4rem;
+            }
+
+            &-TEXT {
+                font-size: 3.2rem; 
+                line-height: 3.2rem;
+                font-weight: 700;
+                color: var(--blackText); 
+            }
+
+            @media screen and (max-width: 750px) {
+                font-size: 1.3rem; 
+                line-height: 1.3rem;
+
+            }
+        }
+        &__questions {
+            display: flex; 
+            flex-direction: column;
+            justify-content: space-evenly;
+            min-height : 28.6rem; 
+            width: 35rem;
+            
+            @media screen and (max-width: 750px) {
+                width: 27.9rem; 
+                height: 33rem; 
+            }
+
+           
+
+            &-QUESTION {
+                display: flex; 
+                flex-direction: column;
+                align-items: center;
+                min-height: 3.5rem;
+                width: 100%; 
+                transition: all .3s ease-in-out;
+                border-bottom: 1px solid var(--Light-grayish-blue);
+
+            
+                @media screen and (max-width: 750px) {
+                    padding-bottom: 1rem;
+                }                
+
+                &-TOP {
+                    height: 3.5rem; 
+                    width: 100%; 
+                    display: flex; 
+                    flex-direction: row; 
+                    align-items: center;
+                    justify-content: space-between;
+                }
+
+                &-LEFT {
+                    display: flex; 
+                    align-content: center;
+                    &-TEXT  {
+                        font-size: 1.4rem;
+                        line-height: 1.2rem;
+                        font-weight: 400;
+                        color: var(--Very-dark-grayish-blue);
+                        cursor: pointer; 
+
+                        @media screen and (max-width: 750px) {
+                            font-size: 1.3rem; 
+                            line-height: 1.3rem;
+                        }
+
+                    }
+                }
+                &-RIGHT {
+                    width: 1rem; 
+                    height: .6rem;
+                    padding-bottom: .2rem; 
+                    background-image: url(images/icon-arrow-down.svg); 
+                    background-position: center;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    cursor: pointer;
+
+                    transition: all .3s ease-in-out;
+                    transform-origin: center;
+
+                }
+               
+            }   
+
+            &-BOTTOM {
+                height: 0; 
+                overflow: hidden;
+                display: flex; 
+                justify-content: start;
+                align-content: center;
+
+                transition: height .3s ease-in-out;
+                
+                &-TEXT {
+                    display: inline-block; 
+                    font-size: 1.4rem; 
+                    line-height: 1.4rem;
+                    font-weight: 400;
+                    color: var(--Very-dark-grayish-blue); 
+                }
+            }
+        }
+    }
+}
+
+.height {
+    height: 6rem; 
+    padding: .4rem 0; 
+}
+
+.rotate {
+    transform: rotate(180deg); 
+}
+
+.boldText {
+    font-weight: 800;
+}
+
+
+.attribution {
+    text-align: center;
+    text-shadow: 1px 1px 5px #ffffff73;
+    margin: 10rem auto 0 auto; 
+}
+
+@keyframes bringIn {
+    0% {
+        position: absolute; 
+        top: -100rem; 
+    }
+    100% {
+        position: absolute; 
+    }
+}
+
+@keyframes bringInFromLeft {
+    0% {
+        position: fixed; 
+        top:  50%;
+        left:  -100rem;
+    }
+    100% {
+        position: absolute; 
+    }
+}
+
+
+
